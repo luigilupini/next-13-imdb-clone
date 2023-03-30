@@ -12,4 +12,6 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  // darkMode: is defaulted to 'media' in tailwind.config.js
+  darkMode: 'class', // controlled by 'attribute' in ThemeProviders.jsx
 };

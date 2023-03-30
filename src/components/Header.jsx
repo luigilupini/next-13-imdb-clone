@@ -6,6 +6,8 @@ import {
   BiInfoCircle as AboutIcon,
 } from 'react-icons/bi';
 
+import DarkModeSwitch from './DarkModeSwitch';
+
 function Header() {
   return (
     <header
@@ -16,10 +18,12 @@ function Header() {
         <MenuItem title="HOME" address="/" icon={HomeIcon} />
         <MenuItem title="ABOUT" address="/about" icon={AboutIcon} />
       </div>
-      <div>
+      <div className="flex items-center space-x-5">
+        <DarkModeSwitch />
+        {/* Logo */}
         <Link href="/">
           <h2 className="text-xl">
-            <span className="font-bold bg-yellow-400 py-1 px-2 rounded-lg">
+            <span className="font-bold bg-yellow-400 py-1 px-2 rounded-lg text-gray-700">
               IMDb
             </span>
             <span className="text-lg hidden sm:inline font-light mx-2">
