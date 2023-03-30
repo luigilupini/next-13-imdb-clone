@@ -20,9 +20,8 @@ export default function DarkModeSwitch() {
   // If theme is set to 'system' and if so, it will use the systemTheme value,
   // otherwise it will use the `theme` value we modify.
   const { systemTheme, theme, setTheme } = useTheme();
-
   const currentTheme = theme === 'system' ? systemTheme : theme;
-  console.log({ systemTheme, theme, setTheme });
+  // console.log({ systemTheme, theme, setTheme });
 
   // TODO - I am sure this is not needed:
   useEffect(() => {

@@ -4,6 +4,7 @@ import { Karla } from 'next/font/google';
 // components
 import Header from '@/components/Header';
 import ThemeProviders from '@/context/ThemeProviders';
+import Navbar from '@/components/Navbar';
 
 const karla = Karla({
   subsets: ['latin-ext'],
@@ -17,7 +18,8 @@ export default function RootLayout({ children }) {
         <ThemeProviders>
           {/* Header */}
           <Header />
-          {/* Search Input */}
+          {/* NavBar */}
+          <Navbar />
 
           {/* Main Content */}
           {children}

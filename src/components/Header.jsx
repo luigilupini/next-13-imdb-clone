@@ -10,10 +10,7 @@ import DarkModeSwitch from './DarkModeSwitch';
 
 function Header() {
   return (
-    <header
-      className="flex justify-between items-center
-      max-w-6xl sm:mx-auto mx-2 py-6 border-b shadow-sm"
-    >
+    <header className="flex items-center justify-between max-w-6xl py-6 mx-2 sm:mx-auto">
       <div className="flex gap-4">
         <MenuItem title="HOME" address="/" icon={HomeIcon} />
         <MenuItem title="ABOUT" address="/about" icon={AboutIcon} />
@@ -23,10 +20,10 @@ function Header() {
         {/* Logo */}
         <Link href="/">
           <h2 className="text-xl">
-            <span className="font-bold bg-yellow-400 py-1 px-2 rounded-lg text-gray-700">
+            <span className="px-2 py-1 font-bold text-gray-700 bg-yellow-400 rounded-lg">
               IMDb
             </span>
-            <span className="text-lg hidden sm:inline font-light mx-2">
+            <span className="hidden mx-2 text-lg font-light sm:inline">
               Clone
             </span>
           </h2>
@@ -41,10 +38,10 @@ function MenuItem({ title, address, icon: Icon }) {
     <div>
       <Link
         href={address}
-        className="mx-4 lg:mx-6 hover:text-amber-600"
+        className="mx-4 lg:mx-6 hover:text-yellow-500"
       >
         <Icon className="text-2xl sm:hidden" />
-        <p className="hidden sm:inline my-2 text-sm">{title}</p>
+        <p className="hidden my-2 text-sm sm:inline">{title}</p>
       </Link>
     </div>
   );
