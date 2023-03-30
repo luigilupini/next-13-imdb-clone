@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
 p {
   @apply leading-relaxed;
   font-size: 15px;

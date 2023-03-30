@@ -71,7 +71,7 @@ const getData = async (params) => {
 export default async function Home({ searchParams }) {
   const data = await getData(searchParams);
   return (
-    <div className="border-4 border-red-600">
+    <div>
       <Results results={data} />
     </div>
   );

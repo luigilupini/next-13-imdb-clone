@@ -43,7 +43,7 @@ function NavItem({ title, param }) {
         className={`hover:text-yellow-500 font-semibold ${
           active && // 👈🏻 check if query string is truthy (not null)
           active === param && // 👈🏻 check if query string match param (genre)
-          'underline underline-offset-8 decoration-3 decoration-yellow-500 rounded-full text-yellow-600'
+          'underline underline-offset-8 decoration-3 decoration-yellow-300 rounded-full text-yellow-600'
         }`}
         href={query}
       >
