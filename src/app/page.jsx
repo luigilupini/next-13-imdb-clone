@@ -57,33 +57,22 @@ const getData = async (params) => {
         ? 'movie/top_rated'
         : 'trending/all/week'
     }?api_key=${API_KEY}&language=en-US&page=1
-   `,
+       `,
     { next: { revalidate: 86400 } } // 👈🏻 86400 seconds is 1 day
   );
-  const data = await res.json();
-  // Here we provide error handling:
-  if (data.errors) {
-    return {
-      notFound: true,
-    };
-  }
-  // ...or we error handle regarding the response status to an error page:
+  // If res has error this should be caught and directed to the `error` page
   if (!res.ok) {
-    return {
-      redirect: {
-        destination: '/error',
-        permanent: false,
-      },
-    };
+    throw new Error('Failed to fetch data');
   }
-  return data;
+  const data = await res.json();
+  return data.results;
 };
 
 export default async function Home({ searchParams }) {
   const data = await getData(searchParams);
   return (
     <div className="border-4 border-red-600">
-      <Results results={data.results} />
+      <Results results={data} />
     </div>
   );
 }
