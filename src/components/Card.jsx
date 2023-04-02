@@ -4,7 +4,8 @@ import React from 'react';
 import { FiThumbsUp } from 'react-icons/fi';
 
 export default function Card({ result }) {
-  // console.log(result);
+  if (!result.poster_path) return null;
+  if (result.vote_average.toFixed(2) < 5) return null; // 👈🏻 We're filtering out movies with a rating below 5 as API is returning adult content :(
   return (
     <article className="transition-shadow duration-300 rounded-lg cursor-pointer sm:p-3 sm:hover:shadow-slate-200 sm:shadow-md sm:border sm:border-slate-400 sm:m-3 group">
       <Link href={`/movie/${result.id}`}>
